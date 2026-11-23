@@ -1,0 +1,46 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.9/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:checkDebugDuplicateClasses UP-TO-DATE
+> Task :app:desugarDebugFileDependencies UP-TO-DATE
+> Task :app:mergeExtDexDebug
+
+The message received from the daemon indicates that the daemon has disappeared.
+Build request sent: Build{id=e5b6b8f6-f81a-429a-863d-5e45a01f27f6, currentDir=/home/user/blades-player}
+Attempting to read last messages from the daemon log...
+Daemon pid: 4527
+  log file: /home/user/.gradle/daemon/8.9/daemon-4527.out.log
+----- Last  20 lines from daemon log file - daemon-4527.out.log -----
+2026-11-23T17:20:53.083+0000 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Starting executing command: Build{id=e5b6b8f6-f81a-429a-863d-5e45a01f27f6, currentDir=/home/user/blades-player} with connection: socket connection from /127.0.0.1:39517 to /127.0.0.1:46830.
+2026-11-23T17:20:53.086+0000 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: started DaemonCommandExecution[command = Build{id=e5b6b8f6-f81a-429a-863d-5e45a01f27f6, currentDir=/home/user/blades-player}, connection = DefaultDaemonConnection: socket connection from /127.0.0.1:39517 to /127.0.0.1:46830] after 0.0024333333333333334 minutes of idle
+2026-11-23T17:20:53.086+0000 [INFO] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Marking the daemon as busy, address: [979e54f6-8975-41d3-a7c1-f049dc3b366f port:39517, addresses:[localhost/127.0.0.1]]
+2026-11-23T17:20:53.086+0000 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking busy by address: [979e54f6-8975-41d3-a7c1-f049dc3b366f port:39517, addresses:[localhost/127.0.0.1]]
+2026-11-23T17:20:53.087+0000 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+2026-11-23T17:20:53.087+0000 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
+2026-11-23T17:20:53.088+0000 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+2026-11-23T17:20:53.088+0000 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] resetting idle timer
+2026-11-23T17:20:53.088+0000 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon is running. Sleeping until state changes.
+2026-11-23T17:20:53.090+0000 [INFO] [org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy] Daemon is about to start building Build{id=e5b6b8f6-f81a-429a-863d-5e45a01f27f6, currentDir=/home/user/blades-player}. Dispatching build started information...
+2026-11-23T17:20:53.092+0000 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 21: dispatching org.gradle.launcher.daemon.protocol.BuildStarted@16c243b0
+2026-11-23T17:20:53.098+0000 [DEBUG] [org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment] Configuring env variables: [PATH, E2B_TEMPLATE_ID, E2B_SANDBOX_ID, SHELL, E2B_EVENTS_ADDRESS, JAVA_HOME, NODE_OPTIONS, OLDPWD, USER, ANDROID_HOME, PS1, E2B_SANDBOX, LOGNAME, PWD, HOME, SHLVL, _]
+2026-11-23T17:20:53.104+0000 [DEBUG] [org.gradle.launcher.daemon.server.exec.LogToClient] About to start relaying all logs to the client via the connection.
+2026-11-23T17:20:53.104+0000 [INFO] [org.gradle.launcher.daemon.server.exec.LogToClient] The client will now receive all logging from the daemon (pid: 4527). The daemon log file: /home/user/.gradle/daemon/8.9/daemon-4527.out.log
+2026-11-23T17:20:53.105+0000 [DEBUG] [org.gradle.launcher.daemon.server.exec.RequestStopIfSingleUsedDaemon] Requesting daemon stop after processing Build{id=e5b6b8f6-f81a-429a-863d-5e45a01f27f6, currentDir=/home/user/blades-player}
+2026-11-23T17:20:53.105+0000 [LIFECYCLE] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon will be stopped at the end of the build 
+2026-11-23T17:20:53.105+0000 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Stop as soon as idle requested. The daemon is busy
+2026-11-23T17:20:53.106+0000 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon stop has been requested. Sleeping until state changes.
+2026-11-23T17:20:53.106+0000 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
+2026-11-23T17:20:53.106+0000 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=19ce54f2-a34e-484d-9df5-ce8f3eb612d4,javaHome=/home/user/tools/jdk,javaVersion=17,daemonRegistryDir=/home/user/.gradle/daemon,pid=4527,idleTimeout=120000,priority=NORMAL,applyInstrumentationAgent=true,nativeServicesMode=ENABLED,daemonOpts=--add-opens=java.base/java.util=ALL-UNNAMED,--add-opens=java.base/java.lang=ALL-UNNAMED,--add-opens=java.base/java.lang.invoke=ALL-UNNAMED,--add-opens=java.prefs/java.util.prefs=ALL-UNNAMED,--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED,--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED,--add-opens=java.base/java.nio.charset=ALL-UNNAMED,--add-opens=java.base/java.net=ALL-UNNAMED,--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED,-Xmx2200m,-Dfile.encoding=US-ASCII,-Duser.country=US,-Duser.language=en,-Duser.variant]----- End of the daemon log -----
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Gradle build daemon disappeared unexpectedly (it may have been killed or may have crashed)
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
